@@ -1,6 +1,19 @@
 import Link from 'next/link';
 
-const Details1 = ({page,setPage,name,email,mobile,dob,password,image,setImage, setName, setEmail, setMobile, setDob, setPassword}) => {
+const Details1 = ({storage,ID,page,setPage,name,email,mobile,dob,password,image,setImage, setName, setEmail, setMobile, setDob, setPassword}) => {
+    const uploadImage = (file) => {
+        const promise = storage.createFile(
+            'profileimage',
+            ID.unique(),
+            file
+        );
+        
+        promise.then(function (response) {
+            setImage(response.$id);
+        }, function (error) {
+            console.log(error);
+        });
+    }
     return (
         <div>
             <div className='py-6 mx-12'>
@@ -10,7 +23,7 @@ const Details1 = ({page,setPage,name,email,mobile,dob,password,image,setImage, s
                     <input
                         type="file"
                         accept="image/*"
-                        // onChange={(e) => setImage(e.target.files[0])}
+                        onChange={(e) => {uploadImage(e.target.files[0])}}
                     />
                 </div>
                 <div className="mt-2">

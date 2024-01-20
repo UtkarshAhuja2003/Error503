@@ -1,14 +1,41 @@
 'use client'
 import { useState } from 'react';
+import { Client, Databases, Query } from 'appwrite';
+import Cookie from 'js-cookie';
+export const client = new Client();
 import Image from 'next/image';
 
 const AdvocateLogin = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    client
+        .setEndpoint('https://cloud.appwrite.io/v1')
+        .setProject('legalsarthi');
+
+    const databases = new Databases(client);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email,password);
+        let promise = databases.listDocuments(
+            "legalsarthi",
+            "litigant",
+            [
+                Query.equal('email', email)
+            ]
+        );
+        
+        promise.then(function (response) {
+            if(response.documents[0]?.password === password){
+                Cookie.set('id', response.documents[0].$id);
+                Cookie.set('user', 'litigant');
+                window.location.href = '/litigant/profile'; 
+            }
+            else{
+                alert('Incorrect Password');
+            }
+        }, function (error) {
+            console.log(error);
+        });
     }
 
     return (
