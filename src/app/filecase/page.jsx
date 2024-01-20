@@ -1,6 +1,6 @@
 'use client'
-import Submitted from '@/app/Components/filecase/submitted'
-import Form from '@/app/Components/filecase/form'
+import Submitted from '../Components/filecase/submitted'
+import Form from '../Components/filecase/form'
 import { useState } from 'react';
 import { CiMail } from "react-icons/ci";
 import { FaMobileScreen, FaUser } from "react-icons/fa6";
