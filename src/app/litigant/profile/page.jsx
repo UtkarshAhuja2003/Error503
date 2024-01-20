@@ -12,7 +12,7 @@ const Index = () => {
     const [displayData, setDisplay] = useState(false);
     useEffect(() => {
         if(!id){
-            window.location.href='/advocate/signin'
+            window.location.href='/litigant/signin'
         }
     },);
     client
@@ -24,7 +24,7 @@ const Index = () => {
     useEffect(() => {
         const promise = databases.getDocument(
             'legalsarthi',
-            'advocate',
+            'litigant',
             id
         );
     
@@ -41,7 +41,7 @@ const Index = () => {
         Cookies.remove('name');
         Cookies.remove('user');
         alert('Logged Out Successfully');
-        window.location.href='/advocate/signin'
+        window.location.href='/litigant/signin'
     }
 
     function display() {
@@ -59,7 +59,6 @@ const Index = () => {
                             <h1 className='mt-16 mb-2 text-2xl font-bold'>{data?.name}</h1>
                             <div className='flex justify-between mt-4'>
                                 <div className='text-md'>
-                                    <p>Bar Registration Number: {data.barregistrationnumber}</p>
                                     <p>Email: {data.email}</p>
                                 </div>
                                 <div className='text-md pl-6 border-l-[3px] border-[#DBE2EF]'>
@@ -78,7 +77,7 @@ const Index = () => {
                         <div>
                             <div className="flex text-3xl ">
                                 <BiShoppingBag />
-                                <h1 className="ml-4 mt-[4px] text-xl">Ordinary Place of Practice</h1>
+                                <h1 className="ml-4 mt-[4px] text-xl">Place of Litigation</h1>
                             </div>
                             <div className="text-[17px] mt-6">
                                 <h2 className="font-bold text-xl">{data.courttype}</h2>
