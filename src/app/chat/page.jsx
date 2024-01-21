@@ -20,20 +20,20 @@ const ChatPage = () => {
     setMessages([...messages, newMessage]);
 
     try {
-      const response = await fetch('your-api-endpoint', {
+      const response = await fetch('https://legalsarthi.onrender.com/legalaid', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userMessage: userInput }),
+        body: JSON.stringify({ question: userInput }),
       });
 
       if (response.ok) {
         const apiResponse = await response.json();
-
+          console.log(apiResponse);
         // Add the API response to the state
         const apiMessage = {
-          text: apiResponse.text,
+          text: apiResponse,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         };
         setMessages([...messages, apiMessage]);
