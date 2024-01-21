@@ -4,7 +4,7 @@ import { RiArrowDropDownLine } from "react-icons/ri"
 import { RiArrowDropUpLine } from "react-icons/ri"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import parse from "html-react-parser"
+import parse from "html-react-parser";
 
 interface Props {
     id:Number, 

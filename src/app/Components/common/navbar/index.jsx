@@ -92,6 +92,11 @@ export default function Navbar() {
             open ? "top-20 bg-theme " : "top-[-490px]"
           }`}
         >
+          <Link href="/" className=" display-none navbar-link border-b-4 border-transparent hover:border-white">
+                <div className="md:flex">
+                  <h1 className='text-black md:text-white mr-4 mt-[-2px]'>Home</h1>
+                </div>
+              </Link>
           <div className=" md:flex md:mr-4">
           <li
               className={`navbar-item dropdown ${showDropdown ? "active" : ""}`}
@@ -101,16 +106,14 @@ export default function Navbar() {
               <div className='hidden md:block'>
               <Link href="/aboutus" className=" display-none navbar-link border-b-4 border-transparent hover:border-white">
                 <div className="md:flex">
-                  <h1 className='text-black md:text-white'>About Us</h1>
+                  <h1 className='text-black md:text-white'>Cases</h1>
                   <RiArrowDropDownLine className="hidden md:block text-[28px]"/>
                 </div>
               </Link>
               </div>
               { showDropdown && <div data-aos="zoom-in" data-aos-duration="200" className={`dropdown-content`}>
-                <Link href="/aboutus#missionandvision" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Mission And Vision</h1></div></Link>
-                <Link href="/whoweare" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Who We Are</h1></div></Link>
-                <Link href="/aboutus#values" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Values</h1></div></Link>
-                <Link href="/aboutus#team" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Team</h1></div></Link>
+                <Link href="/choice" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>New Case</h1></div></Link>
+                <Link href="/dashboard" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Existing Cases</h1></div></Link>
                 {/* <Link href="/#whyus"><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Why Us</h1></div></Link> */}
               </div>}
             </li>
@@ -124,33 +127,13 @@ export default function Navbar() {
             <li
               className={`navbar-item dropdown`}
             >
-              <Link onClick={() => setOpen(!open)} href="/SolutionAndPricing" className="navbar-link md:border-b-4 border-transparent hover:border-white">
+              <Link onClick={() => setOpen(!open)} href="/chat" className="navbar-link md:border-b-4 border-transparent hover:border-white">
                 <div className="flex">
-                  <h1 className='text-black md:text-white'>Solutions</h1>
+                  <h1 className='text-black md:text-white'>Chat Bot</h1>
                 </div>
               </Link>
             </li>
-            <li onClick={() => setOpen(!open)} className={`md:hidden navbar-item dropdown`}>
-            <Link href="/ContactUs" className="md:hidden">
-                <div className="md:hidden font-[700] my-2">
-                  <h1 className='text-black md:text-white md:hidden'>Contact Us</h1>
-                </div>
-              </Link>
-            </li>
-            <li onClick={() => setOpen(!open)} className={`md:hidden navbar-item dropdown mt-24`}>
-              <Link href="/blogs" className="md:hidden pt-4">
-                <div className="md:hidden font-[700] my-4">
-                  <h1 className='text-black md:text-white md:hidden'>News and Blogs</h1>
-                </div>
-              </Link>
-            </li>
-            <li onClick={() => setOpen(!open)} className={`md:hidden navbar-item dropdown mt-2`}>
-              <Link href="/Careers" className="md:hidden pt-4">
-                <div className="md:hidden font-[700] my-4">
-                  <h1 className='text-black md:text-white md:hidden'>Careers</h1>
-                </div>
-              </Link>
-            </li>
+           
           
             <li
               className={`hidden md:block navbar-item dropdown ${showDropdown3 ? "active" : ""}`}
@@ -164,17 +147,17 @@ export default function Navbar() {
                 </div>
               </Link>
               {showDropdown3 && <div data-aos="zoom-in" data-aos-duration="200" className={`dropdown-content`}>
-                <Link href="/ContactUs#faqs"><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>FAQs</h1></div></Link>
+                <Link href="/legalAid"><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Legal Aids</h1></div></Link>
                 {/* <Link href="/"><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>News</h1></div></Link> */}
-                <Link href="/blogs" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>News & Blogs</h1></div></Link>
-                <Link  href="/ContactUs" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Contact Us</h1></div></Link>
-                <Link  href="/Careers" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Careers</h1></div></Link>
+                <Link href="/faq" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>FAQs</h1></div></Link>
+                {/* <Link  href="/ContactUs" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Contact Us</h1></div></Link>
+                <Link  href="/Careers" onClick={() => setOpen(!open)}><div className="flex justify-end p-2 hover:pr-6 duration-300 easee-in-out"><h1>Careers</h1></div></Link> */}
               </div>
 
               }
             </li>
             
-            <Link href="/SolutionAndPricing#tailormadesolutions" onClick={() => setOpen(!open)} ><button className="ml-4 px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white">SignIn/SignUp</button></Link>
+            <Link href="/litigant/signup" onClick={() => setOpen(!open)} ><button className="ml-4 px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white">SignUp</button></Link>
           </div>
           <div className="relative cursor-pointer"></div>
         </ul>

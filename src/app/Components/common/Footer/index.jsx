@@ -17,7 +17,7 @@ function Footer() {
       {
         "key": 1,
         text: "Mission and Vision",
-        link: "/aboutus#missionandvision",
+        link: "#",
       },
       {
         "key": 2,
@@ -39,49 +39,39 @@ function Footer() {
       {
         "key": 1,
         text: "Services",
-        link: "/",
-      },
-      {
-        "key": 2,
-        text: "Projects",
-        link: "/",
+        link: "#",
       },
       {
         "key": 3,
         text: "Testimonials",
-        link: "/",
+        link: "#",
       },
     ],
     resources: [
       {
         "key": 1,
         text: "FAQs",
-        link: "/ContactUs#faqs",
-      },
-      {
-        "key": 2,
-        text: "News & Blogs",
-        link: "/blogs",
+        link: "#",
       },
       {
         "key": 3,
-        text: "Contact Us",
-        link: "/ContactUs",
+        text: "Legal Aids",
+        link: "/legalAid",
       },
       {
         "key": 4,
         text: "Careers",
-        link: "/Careers",
+        link: "#",
       },
       {
         "key": 5,
         text: "Terms of Service",
-        link: "/",
+        link: "#",
       },
       {
         "key": 6,
         text: "Privacy Policy",
-        link: "/",
+        link: "#",
       }
     ],
   };

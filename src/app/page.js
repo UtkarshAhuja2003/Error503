@@ -4,29 +4,10 @@ import { useState,useEffect } from "react";
 import Values from "./Components/Values";
 // import SlickSlider from "./Components/Slider/SliderCard";
 import Slider from "./Components/Slider";
-const Home = () => {
-  const value = [
-    {
-        key: 1,
-        ques: "EXPERIENCE",
-        answer: "With years of dedicated legal practice, our team brings unparalleled experience to every case. We leverage our expertise to navigate through complex legal matters, ensuring the best possible outcomes for our clients.",
-    },
-    {
-        key: 2,
-        ques: "TRANSPARENCY",
-        answer: "Transparency is the cornerstone of our legal approach. We believe in keeping our clients well-informed at every stage of their legal journey, fostering trust and confidence in our professional services.",
-    },
-    {
-        key: 3,
-        ques: "TEAM COLLABORATION",
-        answer: "Our law firm values teamwork and collaboration. We bring together a diverse team of legal experts, working in harmony to provide comprehensive and strategic solutions tailored to our clients' unique needs.",
-    },
-    {
-        key: 4,
-        ques: "RESULTS-DRIVEN",
-        answer: "We are committed to achieving tangible results for our clients. Our focus on delivering positive outcomes, combined with diligence and ownership, sets us apart as a law firm dedicated to success and client satisfaction.",
-    },
-];
+import { FiRotateCcw } from "react-icons/fi";
+import Link from "next/link";
+
+function Home() {
 
   const [highestHeight, setHighestHeight] = useState(400);
   useEffect(() => {
@@ -222,46 +203,110 @@ const Home = () => {
           width={100}
           height={100}
         />
+        <div className="ml-24 absolute top-[300px] ">
+          <h1 className="text-[#04434e] font-bold text-5xl">
+            Legal सारथी
+          </h1>
+          <div className="flex  mt-4">  
+          <Link href="/advocate/signin" onClick={() => setOpen(!open)} ><button className=" px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white py-1  ">Login as Advocate</button></Link>
+          <Link href="/litigant/signin" onClick={() => setOpen(!open)} ><button className="ml-4 px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white py-1">Login as Litigant</button></Link>
+          </div>
+          <h1 className="text-white font-bold text-3xl"></h1>
+        </div>
 
       </div>
       {displayWhyChoose()}
-      <div id="services" className="w-[90%] my-[5%] mx-auto">
-                <div className="px-7 pt-24 text-[24px] md:text-[48px] font-bold text-center pb-6 text-[#342E37]">Our Services</div>
-                <div className=" my-4">
-                        <div className="flex flex-wrap mx-auto w-[85%] justify-between">
-                            <div className="w-[100%] md:w-[24%] px-4 mt-2 md:mt-0">
-                                <div className="section3 bg-no-repeat w-[100%]  h-[230px] bg-center bg-[url('/Solution_pricing/services/bg3.svg')]">
-                                <p id ="threeone" className=" ml-6 absolute ease-in-out duration-700 opacity-0 w-[220px] one text-[14px] md:text-[18px] pt-6 text-center  text-[#342E37]">System ranking legal cases for efficient resource allocation based on predefined criteria.</p>
-
-                                    <Image id ="threetwo" className=' ease-in-out duration-700 wo w-[80%] mx-auto pt-6  h-[63%]  align-middle' src="/images/services/1.png" width={1000} height={1000} alt={''}  />
-                                </div>
-                                <p className="text-[16px] md:text-[18px] text-[#342E37] font-medium text-center">Case Prioritization</p>
-                            </div>
-                            <div className="w-[100%] md:w-[24%] px-4 mt-12 md:mt-0">
-                                <div className="section3 bg-no-repeat w-[100%]  h-[230px] bg-center bg-[url('/Solution_pricing/services/bg3.svg')]">
-                                <p id ="threeone" className=" ml-6 absolute ease-in-out duration-700 opacity-0 w-[22 0px] one text-[14px] md:text-[16px] pt-6 text-center  text-[#342E37]">Real-time notifications on legal case changes, ensuring timely information.</p>
-
-                                    <Image id ="threetwo" className=' ease-in-out duration-700 wo w-[80%] mx-auto pt-6  h-[63%]  align-middle' src="/images/services/2.png" width={1000} height={1000} alt={''}  />
-                                </div>
-                                <p className="text-[16px] md:text-[18px] text-[#342E37] font-medium text-center">Automated Updates</p>
-                            </div>
-                            <div className="w-[100%] md:w-[24%] px-4 mt-12 md:mt-0">
-                                <div className="section3 bg-no-repeat w-[100%]  h-[230px] bg-center bg-[url('/Solution_pricing/services/bg3.svg')]">
-                                <p id ="threeone" className=" ml-6 absolute ease-in-out duration-700 opacity-0 w-[220px] one text-[14px] md:text-[18px] pt-6 text-center  text-[#342E37]">Electronic submission of legal documents, replacing traditional paper filings.</p>
-
-                                    <Image id ="threetwo" className=' ease-in-out duration-700 wo w-[80%] mx-auto pt-6  h-[63%]  align-middle' src="/images/services/3.png" width={1000} height={1000} alt={''}  />
-                                </div>
-                                <p className="text-[16px] md:text-[18px] text-[#342E37] font-medium text-center">E-filings</p>
-                            </div>
-                            <div className="w-[100%] md:w-[24%] px-4 mt-12 md:mt-0">
-                                <div className="section4 bg-no-repeat w-[100%]  h-[230px] bg-center bg-[url('/Solution_pricing/services/bg4.svg')]">
-                                <p id ="fourone" className=" ml-6 absolute ease-in-out duration-700 opacity-0 w-[220px] one text-[14px] md:text-[19px] pt-6 text-center text-[#342E37]">Support services, including advice or representation, for those who can't afford legal assistance.</p>
-                                    <Image id ="fourtwo" className=' ease-in-out duration-700 two w-[80%] mx-auto pt-6  h-[63%]  align-middle' src="/images/services/4.png" width={1000} height={1000} alt={''}  />
-                                </div>
-                                <p className="text-[16px] md:text-[18px] text-[#342E37] font-medium text-center">Legal Aids</p>
-                            </div>
-                        </div>
+      <div id="services" className="w-[100%] my-[5%] mx-auto">
+      <div className="bg-[#A8C7E7] w-full py-12 md:py-24 md:px-[10%]">
+          <h1
+            data-aos="fade-up"
+            className="text-center text-black text-3xl md:text-[38px] font-[600]"
+          >
+            Our Services
+          </h1>
+          <p
+            data-aos="fade-up"
+            className="w-[90%] md:w-[60%] mx-auto text-center font-[300] mt-2"
+          >
+          </p>
+          <div
+            data-aos="fade-up"
+            className="md:flex justify-between mt-8 md:mt-16"
+          >
+            <div className="flip-card mx-auto w-[80%] md:w-[23%] mt-8 md:mt-0">
+              <div className="flip-card-inner">
+                <div className="flip-card-front bg-[url('/images/services/1.jpg')] bg-cover bg-no-repeat bg-center rounded-[20px]">
+                  <FiRotateCcw className="ml-[90%] mt-2 text-xl" />
+                  <div className="bg-white opacity-90 rounded-b-[20px]">
+                    <h1 className="py-2  text-[20px] mt-[118px] font-bold">
+                      Case Prioritization
+                    </h1>
+                  </div>
                 </div>
+
+                <div className="flip-card-back rounded-[20px] bg-[url('/images/services/1.jpg')] bg-cover bg-no-repeat">
+                  <p className="w-[80%] text-center mx-auto mt-8 text-[14px] text-black">
+                  A system that assesses and ranks legal cases based on predefined criteria to determine their urgency or importance for efficient allocation of resources.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flip-card mx-auto w-[80%] mt-8 md:mt-0 md:w-[23%]">
+              <div className="flip-card-inner">
+                <div className="flip-card-front bg-[url('/images/services/2.jpg')] bg-cover bg-no-repeat bg-center rounded-[20px]">
+                  <FiRotateCcw className="ml-[90%] mt-2 text-xl" />
+                  <div className="bg-white opacity-90 rounded-b-[20px]">
+                    <h1 className="py-2 text-[20px] mt-[118px] font-bold">
+                      Automated Updates
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flip-card-back rounded-[20px] bg-[url('/images/services/2.jpg')] bg-cover bg-no-repeat">
+                  <p className="w-[80%] text-center mx-auto mt-8 text-[14px] text-black">
+                  A service that automatically provides real-time information or notifications regarding changes, developments, or status updates in legal cases or processes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flip-card mx-auto w-[80%] md:w-[23%] mt-8 md:mt-0">
+              <div className="flip-card-inner">
+                <div className="flip-card-front bg-[url('/images/services/3.jpg')] bg-cover bg-no-repeat bg-center rounded-[20px]">
+                  <FiRotateCcw className="ml-[90%] mt-2 text-xl" />
+                  <div className="bg-white opacity-90 rounded-b-[20px]">
+                    <h1 className="py-2 text-[20px] mt-[118px] font-bold">
+                      E-Filings
+                    </h1>
+                  </div>
+                </div>
+                <div className="flip-card-back rounded-[20px] bg-[url('/images/services/3.jpg')] bg-cover bg-no-repeat">
+                  <p className="w-[80%] text-center mx-auto mt-8 text-[14px] text-black">
+                  The electronic submission of legal documents to courts or government agencies, replacing traditional paper filings and offering a more efficient and digital approach to legal proceedings.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flip-card mx-auto w-[80%] md:w-[23%] mt-8 md:mt-0">
+              <div className="flip-card-inner">
+                <div className="flip-card-front bg-[url('/images/services/4.jpg')] bg-cover bg-no-repeat bg-center rounded-[20px]">
+                  <FiRotateCcw className="ml-[90%] mt-2 text-xl" />
+                  <div className="bg-white opacity-90 rounded-b-[20px]">
+                    <h1 className="py-2 text-[20px] mt-[118px] font-bold">
+                      Legal Aids
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flip-card-back rounded-[20px] bg-[url('/images/services/4.jpg')] bg-cover bg-no-repeat">
+                  <p className="w-[80%] text-center mx-auto mt-6 text-[14px] text-black">
+                  Support services, often including legal advice or representation, provided to individuals who may not afford legal assistance, aiming to ensure access to justice for all.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
               </div>
       <div id="testimonials" className="bg-white">
           <div className="pb-8 w-full m-[auto]">
