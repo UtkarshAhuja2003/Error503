@@ -8,66 +8,44 @@ import SliderCard from "./SliderCard"
 const index = () => {
   const reviews = [
     {
-      "index": 0,
-      "heading": "Went above and beyond!",
-      "reviewshort": "EL-FI Homes, a standout in solar panel installation and battery backups, caught my",
-      "reviewfulltext": "EL-FI Homes, a standout in solar panel installation and battery backups, caught my attention for their high-quality products at competitive prices. Their detailed step-by-step process and round-the-clock support were impressive. The Installation Team's dedication was evident, completing the project in about a month despite electrical panel complications from my end. They offered swift maintenance, even matching conduit aesthetics, and managed permits meticulously. The Project Manager, Uday, displayed expertise, effective communication, and a friendly demeanor. EL-FI proved to be the ideal choice with exceptional customer service. The solar panels also exceeded energy expectations. If you’re looking for a swift installation and reliable customer service, I highly recommend them.",
-      "name": " Vipin Tiwari",
-      "stars": 5,
-      "designation": "Customer"
-    },
-    {
       "index": 1,
-      "heading": "Good service and bang for your buck",
-      "reviewshort": "EL-FI Homes executed my Q Cell panel installation exceptionally well. They completed",
-      "reviewfulltext": "EL-FI Homes executed my Q Cell panel installation exceptionally well. They completed it and obtained PTO within a month, adhering largely to the contract schedule. I now generate more energy than my household, including a Tesla Model 3, consumes. While SCE tracking isn't fully synchronized, I expect negligible or negative electricity bills.My only grievance is that EL-FI's energy tracking app isn't functional yet for monthly reports, but despite this, the system's value and quick installation met my expectations. I'm confident the investment will recoup its costs in under seven years.",
-      "name": " Mohit Arora",
-      "stars": 5,
-      "designation": "Customer"
+      "heading": "Expert Legal Counsel",
+      "reviewshort": "Legal Saarthi, known for their expertise, impressed me with their comprehensive legal guidance.",
+      "reviewfulltext": "Legal Saarthi, known for their expertise, impressed me with their comprehensive legal guidance and commitment to excellence. Their legal team navigated through complex legal issues with ease, providing valuable insights at every step. The attorneys at Legal Saarthi were responsive, professional, and exhibited a deep understanding of the law. The entire process, from consultation to resolution, was seamless. I appreciate their dedication to achieving positive outcomes for their clients. If you seek expert legal counsel, Legal Saarthi is the right choice.",
+      "name": "Emily Johnson",
+      "stars": 4,
+      "designation": "Satisfied Client"
     },
     {
       "index": 2,
-      "heading": "Excellent experience with this company",
-      "reviewshort": "Thrilled to share my outstanding experience with EL-FI Homes' solar installation service. Their",
-      "reviewfulltext": "Thrilled to share my outstanding experience with EL-FI Homes' solar installation service. Their comprehensive, detail-oriented approach stood out. Clear communication, on-time delivery, and uncompromised quality marked their work. After considering other options, EL-FI's tailored solution, financing help, and expertise shone. Responsive and knowledgeable, they ensured a smooth installation process. The team's professionalism, punctuality, and craftsmanship were impressive. System performance exceeded expectations, supported by their prompt responsiveness. Their friendly approach made the journey enjoyable. EL-FI Homes is highly recommended for their professionalism, expertise, and customer commitment. Thank you, EL-FI Homes, for an exceptional solar installation.",
-      "name": " mikehoffnagle",
+      "heading": "Efficient and Reliable Legal Services",
+      "reviewshort": "Legal Saarthi proved to be an efficient and reliable choice for all my legal needs.",
+      "reviewfulltext": "Legal Saarthi proved to be an efficient and reliable choice for all my legal needs. Their team demonstrated a high level of professionalism, handling my case with precision and attention to detail. The attorneys were proactive in addressing potential challenges and provided clear guidance throughout the legal process. The efficiency of their legal services, coupled with transparent communication, set Legal Saarthi apart. I am grateful for their commitment to delivering top-notch legal solutions. I highly recommend their services.",
+      "name": "Robert Turner",
       "stars": 5,
-      "designation": "Customer"
-    },{
-      "index": 3,
-      "heading": "Fast installers, great panels",
-      "reviewshort": "The contractor was responsive and got out to my home for an estimate quickly. I spoke with them",
-      "reviewfulltext": "The contractor was responsive and got out to my home for an estimate quickly. I spoke with them about my future plans of getting an EV, so I needed a system that would be able to handle that eventually. I got a technical estimate, and they listened to my concerns about panel placement. I had some updates to my electrical panel and roofers at the same time that I was worried about. They had to coordinate with roofers, and I was impressed they went the extra mile to make sure the project got done on time and were there when they said they'd be. After installation, they cleaned up after themselves. Getting the panels was a stretch for the budget with the other work I'm having done, but the energy they're producing is within the estimate, and they're working like they're supposed to.",
-      "name": " buffingtonchristina",
-      "stars": 5,
-      "designation": "Customer"
-    },{
-      "index": 4,
-      "heading": "Electrify your home",
-      "reviewshort": "Exploring solar options, we got quotes from various companies. ELFI Homes' Uday gave a valuable!",
-      "reviewfulltext": "Exploring solar options, we got quotes from various companies. ELFI Homes' Uday gave a valuable second opinion, offering more power for the same price and lower interest. Email exchanges finalized the hassle-free agreement. They handled permits, installation, power company coordination, and inspections, a big help for my busy schedule. ELFI Homes, led by Uday, provides a great product, exceptional service, and financing. Thumbs up!",
-      "name": " eltonalvarez",
-      "stars": 5,
-      "designation": "Customer"
-    },{
-      "index": 5,
-      "heading": "Good value, got job done",
-      "reviewshort": "Choosing EL-FI Homes for my solar panel installation needs was the best decision I made. EL-FI was",
-      "reviewfulltext": "Choosing EL-FI Homes for my solar panel installation needs was the best decision I made. EL-FI was flexible when I requested them to use the panels that I preferred. Despite the NEM craze, they completed the project on time. Their team is always there to clarify questions and I am satisfied with the transparency displayed by EL-FI Homes. The workmanship was outstanding and their concern for my property was displayed throughout the project. EL-FI homes team inspected my attic before and after displaying utmost care for the property. EL-FI Homes' expertise and commitment to customer satisfaction are truly commendable!",
-      "name": " badri.rama",
-      "stars": 5,
-      "designation": "Customer"
+      "designation": "Happy Client"
     },
     {
-      "index": 6,
-      "heading": "Orange county CA solar installation",
-      "reviewshort": "Let me share my fantastic experience with EL-FI Homes' solar installation. Their knowledgeable sales",
-      "reviewfulltext": "Let me share my fantastic experience with EL-FI Homes' solar installation. Their knowledgeable sales rep eased my concerns with detailed explanations about solar tech. I aimed for quality and chose EL-FI as they offered to match other contractors’ pricing. Their top panel warranties and patient guidance through rebates impressed me. Within a month, the solar panels transformed my bills and home appliances with green energy. Their exceptional customer service promptly addressed my queries. EL-FI Homes has my full endorsement; they're the go-to for solar!",
-      "name": "andykoretoff",
+      "index": 3,
+      "heading": "Dedicated Legal Team",
+      "reviewshort": "Legal Saarthi has a dedicated legal team that goes above and beyond for their clients.",
+      "reviewfulltext": "Legal Saarthi has a dedicated legal team that goes above and beyond for their clients. Their commitment to providing exceptional legal representation was evident from the start. The attorneys at Legal Saarthi are knowledgeable, thorough, and always put the client's best interests first. I was impressed with the personalized attention and prompt responses to my legal inquiries. Whether it was negotiation or courtroom representation, they handled it with skill and professionalism. Choosing Legal Saarthi was a wise decision for my legal needs.",
+      "name": "Sophia Davis",
+      "stars": 4,
+      "designation": "Satisfied Customer"
+    },
+    {
+      "index": 4,
+      "heading": "Top-Tier Legal Expertise",
+      "reviewshort": "Legal Saarthi provided top-tier legal expertise, ensuring a positive outcome for my case.",
+      "reviewfulltext": "Legal Saarthi provided top-tier legal expertise, ensuring a positive outcome for my case. Their legal team exhibited a profound understanding of the law, coupled with strategic thinking that proved invaluable. The attorneys at Legal Saarthi were responsive, detail-oriented, and kept me informed throughout the legal process. They navigated through the complexities of my case with confidence and professionalism. I am grateful for their dedication to achieving the best possible results. If you need legal services backed by expertise, Legal Saarthi is the firm to choose.",
+      "name": "Michael Anderson",
       "stars": 5,
-      "designation": "Customer"
+      "designation": "Satisfied Client"
     }
   ]
+  
+  
   ;
   const [slidesToShow, setSlidesToShow] = useState(3);
   
@@ -175,13 +153,13 @@ const index = () => {
 
   return (
     <div>
-      <div className='w-full z-50 relative h-[50px] bg-white'></div>
-      <div className='w-full  z-50 bg-white relative h-[30px] md:h-[100px] mt-[-15px] md:mt-[-50px] rounded-[100%]'></div>
+      <div className='w-full z-20 relative h-[50px] bg-white'></div>
+      <div className='w-full  z-20 bg-white relative h-[30px] md:h-[100px] mt-[-15px] md:mt-[-50px] rounded-[100%]'></div>
       <div className='w-[95%] mx-auto carousel mt-[-50px] relative grid grid-flow-col gap-x-[1rem] overflow-y-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth'>
   {renderSliderCards()}
 </div>
-      <div className='w-full  z-50 bg-white relative h-[30px] md:h-[100px] mt-[-15px] md:mt-[-50px] rounded-[100%]'></div>
-      <div className='w-full z-50 relative h-[50px] bg-white'></div>
+      <div className='w-full  z-20 bg-white relative h-[30px] md:h-[100px] mt-[-15px] md:mt-[-50px] rounded-[100%]'></div>
+      <div className='w-full z-20 relative h-[50px] bg-white'></div>
       <div className='mt-[-30px] md:mt-[-100px] z-[60] relative flex justify-center'>
         <button id='scroll-left-button' className='scroll-button '><AiOutlineArrowLeft className="text-2xl font-bold"/></button>
         <button id='scroll-right-button' className='scroll-button'><AiOutlineArrowRight className="text-2xl font-bold"/></button>

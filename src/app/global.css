@@ -229,3 +229,85 @@ background-color: red; /* Change this to the desired color */
 background-color: blue; /* Change this to the desired color */
 /* Add more styles as needed */
 }
+
+.section1:hover #oneone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section1:hover #onetwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-45px,120px);
+  padding-top: 0;
+}
+.section2:hover #twoone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section2:hover #twotwo{
+  width: 20%;
+  height: 20%;
+  transform: translate(-60px,140px);
+  padding-top: 0;
+}
+.section3:hover #threeone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section3:hover #threetwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-85px,155px);
+  padding-top: 0;
+}
+.section4:hover #fourone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section4:hover #fourtwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-60px,120px);
+  padding-top: 0;
+}
+.section5:hover #fiveone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section5:hover #fivetwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-45px,120px);
+  padding-top: 0;
+}
+.section6:hover #sixone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section6:hover #sixtwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-90px,155px);
+  padding-top: 0;
+}
+.section7:hover #sevenone{
+  display:block;
+  transition-delay: 2s;
+  opacity: 1;
+}
+.section7:hover #seventwo{
+  width: 30%;
+  height: 30%;
+  transform: translate(-85px,150px);
+  padding-top: 0;
+}
+.one{
+  display:none;
+  transition: 0s;
+}

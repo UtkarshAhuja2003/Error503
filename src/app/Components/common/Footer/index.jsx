@@ -86,7 +86,7 @@ function Footer() {
     ],
   };
   return (
-    <div className="bg-[#04434e] w-full py-8 md:py-12 text-white">
+    <div className="bg-[#04434e] w-full py-8 md:py-12 text-white z-[100]">
       <div className="flex w-[90%] md:w-[80%] mx-auto ">
         <div className="md:w-[30%]">
           <Image src='/images/logo.png' width={2000} height={2000} alt="" className="w-[100px] h-[100px] rounded-full" />
