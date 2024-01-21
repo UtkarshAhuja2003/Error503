@@ -7,10 +7,14 @@ import {
   DetectDocumentTextCommand,
   BlockType,
 } from "@aws-sdk/client-textract";
+import { useEffect } from "react";
+import { Client, Databases, ID, Storage } from 'appwrite';
+import Cookies from 'js-cookie';
+export const client = new Client();
 
 const index = () => {
   const [files, setFiles] = useState([]);
-
+  const [evidences, setEvidences] = useState([]);
   const [gender, setGender] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
@@ -20,21 +24,95 @@ const index = () => {
   const [desc, setDesc] = useState("");
   const [state, setState] = useState();
   const [court, setCourt] = useState();
+  const id = Cookies.get('id');
+  useEffect(() => {
+    if (!id) {
+      window.location.href = '/litigant/signin'
+    }
+  },);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(
-      gender,
-      name,
-      date,
-      casetype,
-      contact,
-      caseagainst,
-      desc,
-      state,
-      court
+  client
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('legalsarthi');
+
+  const databases = new Databases(client);
+  
+  const storage = new Storage(client);
+
+  const updateLitigant=(caseid)=>{
+    var cases=[];
+    const promise = databases.getDocument(
+        'legalsarthi',
+        'litigant',
+        id
     );
+
+    promise.then(function (response) {
+        cases=response.cases;
+        cases.push(caseid);
+        console.log("Case",cases);
+    }, function (error) {
+        console.log(error);
+    });
+  }
+
+  const handleFormSubmit = (updatedevidences) => {
+    const caseid = JSON.stringify(Math.floor(Math.random() * 1000000));
+    console.log("Case ID",caseid);
+    const promise = databases.createDocument(
+      'legalsarthi',
+      'cases',
+      ID.unique(),
+      {
+        litigantname: name,
+        litigantid: id,
+        dateofcase: date,
+        litigantcontact: contact,
+        caseid: caseid,
+        casestatus: "Pending",
+        casecourt: court,
+        casedescription: desc,
+        state: state,
+        casetype: casetype,
+        opposinglitigant: caseagainst,
+        evidence: updatedevidences,
+      }
+    );
+
+    promise.then(function (response) {
+      updateLitigant(response.$id);
+    }, function (error) {
+      console.log(error);
+    });
+  }
+
+  const handleSubmit = () => {
+    const promises = [];
+    let updatedevidences=[];
+    for(var i=0;i<files.length;i++) {
+      const file = files[i];
+      const promise = storage.createFile('evidence', ID.unique(), file);
+      
+      promise.then(
+        function (response) {
+          updatedevidences.push(response.$id);
+        },
+        function (error) {
+          console.log(error);
+        }
+      );
+  
+      promises.push(promise);
+    }
+    Promise.all(promises)
+      .then(() => {
+        handleFormSubmit(updatedevidences);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+  
 
   const onRunOCR = async (fileData) => {
     const client = new TextractClient({
@@ -62,43 +140,43 @@ const index = () => {
       const filteredData = data.Blocks.filter(
         (block) => block.BlockType === "WORD"
       ).map((block) => block.Text);
-      var updatedName="";
-      var updatedContact="";
-      var updatedDate="";
-      var updatedCourt="";
-      var updatedState="";
-      var updatedCaseType="";
-      var updatedOpp="";
-      var updatedDesc="";
+      var updatedName = "";
+      var updatedContact = "";
+      var updatedDate = "";
+      var updatedCourt = "";
+      var updatedState = "";
+      var updatedCaseType = "";
+      var updatedOpp = "";
+      var updatedDesc = "";
       var i = 4;
       while (filteredData[i] !== "Contact") {
-        updatedName=updatedName+" "+filteredData[i];
+        updatedName = updatedName + " " + filteredData[i];
         i++;
       }
-      i+=2;
-      updatedContact=filteredData[i];
-      i+=2;
-      updatedDate=filteredData[i];
-      i+=2;
-      while(filteredData[i]!=="State"){
-        updatedCourt=updatedCourt+" "+ filteredData[i];
+      i += 2;
+      updatedContact = filteredData[i];
+      i += 2;
+      updatedDate = filteredData[i];
+      i += 2;
+      while (filteredData[i] !== "State") {
+        updatedCourt = updatedCourt + " " + filteredData[i];
         i++;
       }
-      i+=2;
-      while(filteredData[i]!=="Case"){
-        updatedState=updatedState+" "+filteredData[i];
+      i += 2;
+      while (filteredData[i] !== "Case") {
+        updatedState = updatedState + " " + filteredData[i];
         i++;
       }
-      i+=2;
-      updatedCaseType=filteredData[i];
-      i+=3;
-      while(filteredData[i]!="Description"){
-        updatedOpp+=" "+filteredData[i];
+      i += 2;
+      updatedCaseType = filteredData[i];
+      i += 3;
+      while (filteredData[i] != "Description") {
+        updatedOpp += " " + filteredData[i];
         i++;
       }
-      i+=2;
-      while(i<filteredData.length){
-        updatedDesc+=" "+filteredData[i];
+      i += 2;
+      while (i < filteredData.length) {
+        updatedDesc += " " + filteredData[i];
         i++;
       }
       setName(updatedName);
@@ -204,7 +282,7 @@ const index = () => {
         </div>
         <button
           onClick={() => {
-            setPageState(2);
+            handleSubmit();
           }}
           className=" px-4 py-2 bg-[#3ac7e7] text-center rounded-md hover:bg-[#1d7adb] text-white ease-in-out duration-300 mt-3 mb-6 ml-[45%]"
         >
