@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './case.css'
 const page = () => {
     return (
         <div className='caseBox'>
