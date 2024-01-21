@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .background-video {
-  /* position: relative; */
     width: 100%;
     background-attachment: fixed;
     max-width: 100%;
@@ -28,23 +27,8 @@ video {
 }
 
 
-/* section:hover #img {
-  width: 90%;
-}
-@media (max-width: 768px) {
-  section:hover #img {
-    width: 40%; 
-  }
-}
-@media (max-width: 480px) {
-  section:hover #img {
-    width: 70%;
-  }
-} */
-
   
   #text2{
-  /* top: 0px; */
   font-size: 0.8rem;
   }
   @media (max-width: 768px) {
@@ -52,7 +36,6 @@ video {
       visibility: visible;
       display: block;
       opacity: 100;
-      /* top: -40px; */
       font-size: 0.8rem;
       }
       #text1{
@@ -69,13 +52,11 @@ video {
       display: block;
       opacity: 100;
       margin-top: 20px;
-      /* top: -40px; */
       font-size: 0.8rem;
       }
       section:hover #text1{
         top: -50px;
         opacity: 0;
-        /* visibility: hidden; */
         }
   }
 
@@ -119,7 +100,6 @@ color: black;
 
 /* Style the back side */
 .flip-card-back {
-/* background-color: dodgerblue; */
 color: white;
 transform: rotateY(180deg);
 }
