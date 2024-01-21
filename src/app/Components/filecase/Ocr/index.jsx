@@ -12,7 +12,7 @@ import { Client, Databases, ID, Storage } from 'appwrite';
 import Cookies from 'js-cookie';
 export const client = new Client();
 
-const index = () => {
+const Index = () => {
   const [files, setFiles] = useState([]);
   const [evidences, setEvidences] = useState([]);
   const [gender, setGender] = useState("");
@@ -293,4 +293,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

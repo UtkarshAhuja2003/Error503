@@ -7,7 +7,7 @@ import { Client, Databases, ID, Storage } from 'appwrite';
 import Cookies from 'js-cookie';
 export const client = new Client();
 
-const filecase = ({setPageState}) => {
+const Filecase = ({setPageState}) => {
     const [gender, setGender] = useState('');
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
@@ -301,4 +301,4 @@ const filecase = ({setPageState}) => {
     )
 }
 
-export default filecase
+export default Filecase

@@ -11,7 +11,7 @@ import { FaBriefcase } from "react-icons/fa";
 import { GiInjustice } from "react-icons/gi";
 import Link from "next/link";
 
-const index = () => {
+const Index = () => {
   const id=Cookies.get('id');
     const [userdata,setuserdata]=useState();
     const [caseData,setcases]=useState();
@@ -119,4 +119,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

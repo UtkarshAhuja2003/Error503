@@ -5,7 +5,7 @@ import './slick-slider-custom.css'; // Import your custom CSS file
 import {AiOutlineArrowLeft,AiOutlineArrowRight} from 'react-icons/ai'
 import SliderCard from "./SliderCard"
 
-const index = () => {
+const Index = () => {
   const reviews = [
     {
       "index": 1,
@@ -168,4 +168,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

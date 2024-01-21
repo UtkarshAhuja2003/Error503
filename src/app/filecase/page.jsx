@@ -11,7 +11,7 @@ import { Client, Databases} from 'appwrite';
 export const client = new Client();
 import Cookies from 'js-cookie';
 
-const filecase = () => {
+const Filecase = () => {
     const id = Cookies.get('id');
     const [userdata,setuserdata]=useState();
     const [displayData, setDisplay] = useState(false);
@@ -84,4 +84,4 @@ const filecase = () => {
     )
 }
 
-export default filecase
+export default Filecase

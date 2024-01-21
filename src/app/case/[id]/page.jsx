@@ -4,7 +4,7 @@ import { Client, Databases} from 'appwrite';
 export const client = new Client();
 import { useEffect,useState } from 'react';
 
-const page = ({ params })  => {
+const Page = ({ params })  => {
     const id=params.id;
     const [data,setdata]=useState();
     const [displayData, setDisplay] = useState(false);
@@ -49,4 +49,4 @@ const page = ({ params })  => {
     )
 }
 
-export default page
+export default Page
