@@ -1,4 +1,5 @@
 'use client'
+import '../../case/case.css'
 import { Client, Databases} from 'appwrite';
 export const client = new Client();
 import { useEffect,useState } from 'react';
