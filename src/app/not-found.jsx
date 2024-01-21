@@ -1,7 +1,7 @@
 const notfound = () => {
     return (
-        <div>
-            fuck off
+        <div className="mx-auto mt-[300px]">
+            Page not found
         </div>
     )
 }
