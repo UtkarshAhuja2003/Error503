@@ -1,0 +1,31 @@
+/* slick-slider-custom.css */
+
+/* Customize the color of the navigation buttons */
+.slick-prev,
+.slick-next {
+  color: #ff0000; /* Change this to your desired color */
+}
+
+/* Customize the hover color of the navigation buttons */
+.slick-prev:hover,
+.slick-next:hover {
+  color: #00ff00; /* Change this to your desired hover color */
+}
+
+.carousel {
+  /* overflow-x: hidden; Hide the horizontal scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+}
+
+/* .carousel::-webkit-scrollbar {
+  z-index: ; 
+} */
+.scroll-button {
+  padding: 8px 16px;
+  margin: 10px;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+

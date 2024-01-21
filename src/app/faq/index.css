@@ -1,0 +1,24 @@
+.section1:hover {
+    background-color: #DCEFF3;
+
+}
+
+.section1:hover #one {
+    background-color: white;
+}
+
+.section1:hover #two {
+    color: #034488;
+}
+
+.section2:hover {
+    background-color: #DCEFF3;
+}
+
+.section2:hover #three {
+    background-color: white;
+}
+
+.section2:hover #four {
+    color: #034488;
+}

@@ -174,7 +174,7 @@ export default function Navbar() {
               }
             </li>
             
-            <Link href="/SolutionAndPricing#tailormadesolutions" onClick={() => setOpen(!open)} ><button className="ml-4 px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white">Free Quote</button></Link>
+            <Link href="/SolutionAndPricing#tailormadesolutions" onClick={() => setOpen(!open)} ><button className="ml-4 px-4 my-2 border-[#034488] md:border-white border-2 rounded-lg hover:bg-[#034488] font-bold hover:text-white  duration-300 easee-in-out text-[#034488] bg-white">SignIn/SignUp</button></Link>
           </div>
           <div className="relative cursor-pointer"></div>
         </ul>
