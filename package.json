@@ -2,6 +2,7 @@
   "name": "error503",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://legalsarthi.onrender.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
