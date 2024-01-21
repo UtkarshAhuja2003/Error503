@@ -2,6 +2,10 @@
 import { useState } from 'react';
 import { MdDeleteOutline } from "react-icons/md";
 import './fileUpload.css'
+import { useEffect } from "react";
+import { Client, Databases, ID, Storage } from 'appwrite';
+import Cookies from 'js-cookie';
+export const client = new Client();
 
 const filecase = ({setPageState}) => {
     const [gender, setGender] = useState('');
@@ -14,7 +18,109 @@ const filecase = ({setPageState}) => {
     const [files, setFiles]  = useState([]);
     const [state, setState]  = useState();
     const [court, setCourt]  = useState();
+    const id = Cookies.get('id');
+  useEffect(() => {
+    if (!id) {
+      window.location.href = '/litigant/signin'
+    }
+  },);
 
+  client
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('legalsarthi');
+
+  const databases = new Databases(client);
+  const storage = new Storage(client);
+
+  const updateLitigant=(caseid)=>{
+    var cases=[];
+    const promise = databases.getDocument(
+        'legalsarthi',
+        'litigant',
+        id
+    );
+
+    promise.then(function (response) {
+        const tempcase=response.cases;
+        if(tempcase==null){
+            cases.push(caseid);
+        }
+        else{
+            cases=tempcase;
+            cases.push(caseid);
+        }
+
+        const promise = databases.updateDocument('legalsarthi', 'litigant', id, {
+            caseid: cases,
+        });
+
+        promise.then(function (response) {
+            alert("Case Filed Successfully!");
+            window.location.href = '/dashboard' // Success
+        }, function (error) {
+            console.log(error); // Failure
+        });
+    }, function (error) {
+        console.log(error);
+    });
+  }
+
+  const handleFormSubmit = (updatedevidences) => {
+    const caseid = JSON.stringify(Math.floor(Math.random() * 1000000));
+    console.log("Case ID",caseid);
+    const promise = databases.createDocument(
+      'legalsarthi',
+      'cases',
+      ID.unique(),
+      {
+        litigantname: name,
+        litigantid: id,
+        dateofcase: date,
+        litigantcontact: contact,
+        caseid: caseid,
+        casestatus: "Pending",
+        casecourt: court,
+        casedescription: desc,
+        state: state,
+        casetype: casetype,
+        opposinglitigant: caseagainst,
+        evidence: updatedevidences,
+      }
+    );
+
+    promise.then(function (response) {
+        updateLitigant(response.$id);
+    }, function (error) {
+      console.log(error);
+    });
+  }
+
+  const handleSubmit = () => {
+    const promises = [];
+    let updatedevidences=[];
+    for(var i=0;i<files.length;i++) {
+      const file = files[i];
+      const promise = storage.createFile('evidence', ID.unique(), file);
+      
+      promise.then(
+        function (response) {
+          updatedevidences.push(response.$id);
+        },
+        function (error) {
+          console.log(error);
+        }
+      );
+  
+      promises.push(promise);
+    }
+    Promise.all(promises)
+      .then(() => {
+        handleFormSubmit(updatedevidences);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
     return (
         <div>
@@ -185,7 +291,7 @@ const filecase = ({setPageState}) => {
 
                                                     </ul>
                                                 </div>
-                                                <button onClick={()=>{setPageState(2)}} className=' px-4 py-2 bg-[#3ac7e7] text-center rounded-md hover:bg-[#1d7adb] text-white ease-in-out duration-300 mt-3 mb-6 ml-[45%]'>Submit</button>
+                                                <button onClick={()=>{handleSubmit()}} className=' px-4 py-2 bg-[#3ac7e7] text-center rounded-md hover:bg-[#1d7adb] text-white ease-in-out duration-300 mt-3 mb-6 ml-[45%]'>Submit</button>
                                             </div>
                                     </div>
                                 </div>

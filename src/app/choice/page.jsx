@@ -2,10 +2,17 @@
 import "../Components/filecase/form/fileUpload.css";
 import { MdDeleteOutline } from "react-icons/md";
 import Ocr from '../Components/filecase/Ocr'
+import { useEffect } from "react";
+import Cookies from 'js-cookie';
 import Link from "next/link";
 import Image from "next/image";
 const page = () => {
-
+  const id=Cookies.get('id');
+  useEffect(() => {
+    if(!id){
+        window.location.href='/litigant/signin'
+    }
+},);
   return (
     <div>
       <div className="mt-10 flex justify-center">
