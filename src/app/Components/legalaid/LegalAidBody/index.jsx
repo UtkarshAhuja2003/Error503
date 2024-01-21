@@ -53,7 +53,7 @@ const index = () => {
           <br />
 
           <div className='text-[#04434E] font-[800] text-xl mb-[0.7rem] mt-[0.7rem]'>Quick Links</div>
-          <Link href="#">1. FAQ: What if I'm Picked up by Immigration and Customs Enforcement (ICE) in DC?</Link>
+          <Link href="#">1. FAQ: What if I&apos;m Picked up by Immigration and Customs Enforcement (ICE) in DC?</Link>
           <br />
           <Link href="#">2. FAQ: Late Fee Fairness Amendment Act Of 2016</Link>
           <br />

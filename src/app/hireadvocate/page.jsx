@@ -30,10 +30,11 @@ const Organisations = () => {
 
     const display = () => {
       return advocate.map((data) => (
-        <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-4">
+
+        <div key={data.$id} className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-4">
           <div
             className="c-card block bg-[#FFFFFF] shadow-md ease-in-out duration-300 hover:shadow-2xl   overflow-hidden"
-          >
+          >key={data.$id}
             <div className="">
               <img
                 className=" mx-auto object-cover w-40 h-40 mb-3 mt-7 rounded-full shadow-lg"

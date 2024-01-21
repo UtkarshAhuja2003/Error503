@@ -97,6 +97,7 @@ const Index = () => {
         {
             caseData.map((data) => (
               <Card
+                key={data.$id}
                 litigantName={data.litigantname}
                 dateOfCase={data.dateofcase}
                 caseId={data.caseid}

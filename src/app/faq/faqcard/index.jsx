@@ -6,13 +6,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import parse from "html-react-parser";
 
-interface Props {
-    id:Number, 
-    ques: string,
-    answer: string
-  }
 
-function Contact(props:Props) {
+
+function Contact(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const handleClick = () => {

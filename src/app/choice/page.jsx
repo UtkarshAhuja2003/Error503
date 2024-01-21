@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Cookies from 'js-cookie';
 import Link from "next/link";
 import Image from "next/image";
-const page = () => {
+const Page = () => {
   const id=Cookies.get('id');
   useEffect(() => {
     if(!id){
@@ -72,4 +72,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

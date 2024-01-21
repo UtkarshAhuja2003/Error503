@@ -357,7 +357,7 @@ function Home() {
             </div>
             <div className="section3 w-[90%] flex lg:mx-[2%]">
               <p id='text5' className='text-white flex flex-wrap justify-center content-center ease-in-out duration-300 border-white border-2  w-[40%] py-3 text-[18px] md:text-[24px] text-center mt-[35px] mb-[3%] lg:mx-[2%]   hover:bg-[#1D7ADB] '>TEAM COLLABORATION</p>
-              <p id='text6' className='text-[#04434e] mx-[3%] text-[16px] w-[60%] my-[2%] hover:text-white ease-in-out duration-300 text-justify'>Our law firm values teamwork and collaboration. We bring together a diverse team of legal experts, working in harmony to provide comprehensive and strategic solutions tailored to our clients' unique needs. </p>
+              <p id='text6' className='text-[#04434e] mx-[3%] text-[16px] w-[60%] my-[2%] hover:text-white ease-in-out duration-300 text-justify'>Our law firm values teamwork and collaboration. We bring together a diverse team of legal experts, working in harmony to provide comprehensive and strategic solutions tailored to our clients&apos; unique needs. </p>
             </div>
           </div>
           <div className='border-b-4 border-white bg-white w-full mx-auto' ></div>

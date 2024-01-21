@@ -63,7 +63,8 @@ const Organisations = () => {
     <div>
       <div className="flex flex-wrap bg-[#f1f3f9] shadow-inner w-[95%] mx-auto mt-12 shadow-[rgba(0, 0, 0, 0.08)]">
         {organisations.map((data) => (
-          <div className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-4">
+          <div key={data.$id} className="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-4">
+            key={data.$id}
             <div
               className="c-card block bg-[#FFFFFF] shadow-md ease-in-out duration-300 hover:shadow-2xl   overflow-hidden"
             >

@@ -6,12 +6,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './index.css'
 
-interface Props {
-    id:Number, 
-    ques: String,
-    answer: String
-  }
-function Values(props:Props) {
+
+function Values(props) {
     
     const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);

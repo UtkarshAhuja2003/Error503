@@ -1,7 +1,7 @@
 import  Header  from "../Components/legalaid/Header"
 import LegalAidBody from "../Components/legalaid/LegalAidBody"
 
-const page = () => {
+const Page = () => {
     return (
         <div>
             <Header/>
@@ -10,4 +10,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
